@@ -22,7 +22,7 @@ class ProjectController extends Controller
         $response = [
             'success' => true,
             'code' => 200,
-            'message' => ' Ok',
+            'message' => 'Ok',
             'data' => $projects
         ];
 

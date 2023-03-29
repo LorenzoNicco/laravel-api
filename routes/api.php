@@ -18,5 +18,5 @@ use App\Http\Controllers\Api\ProjectController;
 */
 
 Route::name('api.')->group(function () {
-    Route::get('/projects', [ProjectController::class, 'projects'])->only(['index', 'show']);
+    Route::resource('projects', ProjectController::class)->only(['index', 'show']);
 });
