@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 // models
 use App\Models\Project;
 
+// Helpers
+use Exception;
+
 class ProjectController extends Controller
 {
     /**
@@ -53,12 +56,28 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $project = Project::where('slug', $slug)->with('types', 'technologies')->first();
+
+        if ($project) {
+            return response()->json([
+                'success' => true,
+                'code' => 200,
+                'message' => 'Ok',
+                'project' => $project
+            ]);
+        }
+        else {
+            return response()->json([
+                'success' => false,
+                'code' => 404,
+                'message' => 'Not Found'
+            ]);
+        }
     }
 
     // /**
