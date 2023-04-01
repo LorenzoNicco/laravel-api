@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 // models
 use App\Models\Project;
 
-// Helpers
-use Exception;
 
 class ProjectController extends Controller
 {
@@ -61,7 +59,7 @@ class ProjectController extends Controller
      */
     public function show($slug)
     {
-        $project = Project::where('slug', $slug)->with('types', 'technologies')->first();
+        $project = Project::where('slug', $slug)->first();
 
         if ($project) {
             return response()->json([
