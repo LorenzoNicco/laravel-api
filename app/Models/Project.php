@@ -17,6 +17,21 @@ class Project extends Model
         'type_id'
     ];
 
+    protected $appends = [
+        'full_img_path',
+    ];
+
+    public function getFullImgPathAttribute()
+    {
+        $fullPath = null;
+
+        if ($this->img) {
+            $fullPath = asset('storage/'.$this->img);
+        }
+
+        return $fullPath;
+    }
+
     public function type() {
         return $this->belongsTo(Type::class);
     }

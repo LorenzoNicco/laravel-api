@@ -39,8 +39,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="image-input" class="form-label text-light">Immagine</label>
-            <input class="form-control" type="file" id="image-input" name="img" accept="image/*">
+            <label for="img" class="form-label text-light">Immagine</label>
+            <input class="form-control" type="file" id="img" name="img" accept="image/*">
         </div>
 
         <div class="mb-3">

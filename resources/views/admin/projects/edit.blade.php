@@ -59,7 +59,7 @@
                 <img src="{{ asset('storage/'.$project->img) }}" class="card-img-top mb-3" alt="immagine" style="height: 200px; width: 300px">
             @endif
 
-            <input class="form-control" type="file" id="image-input" name="img" accept="image/*">
+            <input class="form-control" type="file" id="img" name="img" accept="image/*">
         </div>
 
         <div>
